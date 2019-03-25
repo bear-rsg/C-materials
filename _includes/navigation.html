@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="{% link index.html %}" title="Home">Course Home<span class="sr-only"> (current)</span></a></li>
+				<li class="nav-item active"><a class="nav-link" href="{% if page.url contains 'days/' %}../{% endif %}index.html" title="Home">Course Home<span class="sr-only"> (current)</span></a></li>
 				{% for i in (1..6) %}
-					<li class="nav-item"><a class="nav-link" href="days/{{ i }}.html" title="Day {{ i }}">Day {{ i }}</a></li>
+					<li class="nav-item"><a class="nav-link" href="{% unless page.url contains 'days/' %}days/{% endif %}{{ i }}.html" title="Day {{ i }}">Day {{ i }}</a></li>
 				{% endfor %}
 			</ul>
 </ul>
