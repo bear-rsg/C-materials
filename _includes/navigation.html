@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<a class="navbar-brand" href="https://bear.bham.ac.uk"><img src="{% if page.url contains 'days/' %}../{% endif %}images/RSG%20logo.png" alt="BEAR Research Software Group" title="BEAR Research Software Group" height="60"></a>
 	<ul class="navbar-nav mr-auto">
 		<li class="nav-item{% if page.name == 'index.html' %} active{% endif %}"><a class="nav-link" href="{% if page.url contains 'days/' %}../{% endif %}index.html" title="Home">Course homepage{% if page.name == 'index.html' %}<span class="sr-only"> (current)</span>{% endif %}</a></li>
 		{% for i in (1..site.show_upto_day) %}
