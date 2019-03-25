@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 	<ul class="navbar-nav mr-auto">
 		<li class="nav-item{% if page.name == 'index.html' %} active{% endif %}"><a class="nav-link" href="{% if page.url contains 'days/' %}../{% endif %}index.html" title="Home">Course homepage{% if page.name == 'index.html' %}<span class="sr-only"> (current)</span>{% endif %}</a></li>
-		{% for i in (1..2) %}
+		{% for i in (1..site.show_upto_day) %}
 			{% assign filename = i | append: '.html' %}
 			<li class="nav-item{% if page.dir == '/days/' and page.name == filename %} active{% endif %}"><a class="nav-link" href="{% unless page.url contains 'days/' %}days/{% endunless %}{{ i }}.html" title="Day {{ i }}">Day {{ i }}{% if page.dir == '/days/' and page.name == filename %}<span class="sr-only"> (current)</span>{% endif %}</a></li>
 		{% endfor %}
