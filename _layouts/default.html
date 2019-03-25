@@ -14,7 +14,7 @@
 			</div>
 		</main>
 		<footer class="page-footer font-small bg-secondary text-light">
-			<p>Last regenerated: {{ site.time }}</p>
+			<p>Last regenerated: {{ site.time | date_to_rfc822 }}</p>
 		</footer>
 	</body>
 </html>
